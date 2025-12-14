@@ -1,0 +1,21 @@
+# ---------- Python ----------
+__pycache__/
+*.pyc
+.env
+catboost_info/
+.ipynb_checkpoints/
+
+# ---------- IDE ----------
+.idea/
+Flight_Deployment/.idea/
+
+# ---------- Node / Frontend ----------
+node_modules/
+frontend/node_modules/
+frontend/build/
+
+# ---------- Dataset (optional) ----------
+dataset/
+
+# ---------- Nested Git Repo ----------
+Flight_Price_Prediction_vercel_/

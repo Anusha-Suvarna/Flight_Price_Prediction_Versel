@@ -6,15 +6,15 @@ An end-to-end machine learning web application to predict flight ticket prices u
 
 - **ML Model**: Trained on Indian flight data with features like airline, route, date/time, stops, duration
 - **Modern Web UI**: React frontend with a classy, game-inspired design (PUBG style dark theme)
-- **Real-time API**: Flask backend serving predictions via REST API
+- **Real-time API**: Serverless Python API serving predictions via REST API
 - **Production Ready**: Containerized and deployable to cloud platforms
 
 ## Architecture
 
 - **Frontend**: React.js with Material-UI, modern spa theme
-- **Backend**: Flask with CORS support
+- **Backend**: Serverless Python API on Vercel
 - **Model**: Extra Trees Regressor pickled and loaded
-- **Deployment**: Vercel-ready with serverless functions
+- **Deployment**: Vercel with automatic builds and serverless functions
 
 ## Setup & Run
 
@@ -29,7 +29,7 @@ An end-to-end machine learning web application to predict flight ticket prices u
 
    ```bash
    git clone <repository-url>
-   cd Flight_Price_Prediction
+   cd Flight_Price_Prediction_vercel
    ```
 
 2. **Backend Setup**:
@@ -75,15 +75,14 @@ An end-to-end machine learning web application to predict flight ticket prices u
 
 ## Deployment
 
-### Vercel
+### Vercel (Recommended)
 
-1. Push code to GitHub repository
-2. Connect repo to Vercel (vercel.com)
-3. Set build settings:
-   - Build Command: `cd frontend && npm run build && cd ../Flight_Deployment && pip install -r requirements.txt`
-   - Output Directory: `frontend/build` (for React) and configure API routes for Flask
-4. Deploy: Vercel auto-deploys on push
-5. https://your-app-name.vercel.app
+1. Install Vercel CLI: `npm install -g vercel`
+2. Login: `vercel login`
+3. Deploy: `vercel --prod`
+4. Or push to GitHub and connect repo to Vercel for auto-deployment
+5. The `vercel.json` handles build configuration automatically
+6. App deployed at: https://your-app-name.vercel.app
 
 ### Manual Deployment
 

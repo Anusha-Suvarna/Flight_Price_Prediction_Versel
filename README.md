@@ -32,23 +32,22 @@ An end-to-end machine learning web application to predict flight ticket prices u
    cd Flight_Price_Prediction_vercel
    ```
 
-2. **Backend Setup**:
+2. **Frontend Build**:
 
-   ```bash
-   cd Flight_Deployment
-   pip install -r requirements.txt
-   py -3 app.py
-   ```
-
-   Flask runs on http://127.0.0.1:5000 (debug mode)
-
-3. **Frontend (Optional for development)**:
    ```bash
    cd frontend
    npm install
-   npm start
+   npm run build
    ```
-   React dev server runs on http://localhost:3000
+
+3. **Backend Setup**:
+
+   ```bash
+   pip install -r Flight_Deployment/requirements.txt
+   python Flight_Deployment/app.py
+   ```
+
+   Flask runs on http://127.0.0.1:5000 (debug mode), serving the built React app
 
 ### Production Build
 

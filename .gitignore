@@ -19,3 +19,5 @@ dataset/
 
 # ---------- Nested Git Repo ----------
 Flight_Price_Prediction_vercel_/
+.vercel
+.env*.local

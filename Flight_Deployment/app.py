@@ -5,7 +5,8 @@ import pickle
 import pandas as pd
 import os
 
-app = Flask(__name__, static_folder='../frontend/build', static_url_path='/')
+static_dir = os.path.join(os.path.dirname(__file__), '..', 'frontend', 'build')
+app = Flask(__name__, static_folder=static_dir, static_url_path='/')
 model = pickle.load(open("model.pkl", "rb"))
 
 
@@ -13,7 +14,7 @@ model = pickle.load(open("model.pkl", "rb"))
 @app.route("/")
 @cross_origin()
 def home():
-    if os.path.exists('../frontend/build/index.html'):
+    if os.path.exists(os.path.join(static_dir, 'index.html')):
         return app.send_static_file('index.html')
     return render_template("index.html")
 
